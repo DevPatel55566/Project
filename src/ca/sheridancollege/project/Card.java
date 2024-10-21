@@ -13,7 +13,24 @@ package ca.sheridancollege.project;
  */
 public abstract class Card {
     //default modifier for child classes
+    private String rank;
+    private String suit;
 
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    public void setSuit(String suit) {
+        this.suit = suit;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
     /**
      * Students should implement this method for their specific children classes
      *
