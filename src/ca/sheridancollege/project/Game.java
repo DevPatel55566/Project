@@ -1,58 +1,51 @@
-/**
- * SYST 17796 Project Base code.
- * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
- */
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * The class that models your game. You should create a more specific child of this class and instantiate the methods
  * given.
- *
+ * 
  * @author dev and shweta
  * @author dev and Shweta 10-10-2024
  */
 public abstract class Game {
 
-    private final String name;//the title of the game
-    private ArrayList<Player> players;// the players of the game
+	private final String name;
+	/**
+	 * the title of the game
+	 */
+	private Collection<Player> players;
 
-    public Game(String name) {
-        this.name = name;
-        players = new ArrayList();
-    }
+	public String getName() {
+		return this.name;
+	}
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
+	public Collection<Player> getPlayers() {
+		return this.players;
+	}
 
-    /**
-     * @return the players of this game
-     */
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
+	public void setPlayers(Collection<Player> players) {
+		this.players = players;
+	}
 
-    /**
-     * @param players the players of this game
-     */
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
+	/**
+	 * the players of the game
+	 * @param name
+	 */
+	public Game(String name) {
+		// TODO - implement Game.Game
+		throw new UnsupportedOperationException();
+	}
 
-    /**
-     * Play the game. This might be one method or many method calls depending on your game.
-     */
-    public abstract void play();
+	/**
+	 * Play the game. This might be one method or many method calls depending on your game.
+	 */
+	public abstract void play();
 
-    /**
-     * When the game is over, use this method to declare and display a winning player.
-     */
-    public abstract void declareWinner();
+	/**
+	 * When the game is over, use this method to declare and display a winning player.
+	 */
+	public abstract void declareWinner();
 
-}//end class
+}
