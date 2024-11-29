@@ -1,40 +1,30 @@
 package ca.sheridancollege.project;
 
 /**
- * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
- * game.
+ * A class to be used as the base Card class for the project. 
  * 
- * @author dev and Shweta 10-10-2024
+ * @author dev and shweta
+ * @author dev and Shweta 28-11-2024
  */
-public abstract class Card {
+public class Card {
+    private String rank;
+    private String suit;
 
-	/**
-	 * default modifier for child classes
-	 */
-	private String rank;
-	private String suit;
+    public Card(String rank, String suit) {
+        this.rank = rank;
+        this.suit = suit;
+    }
 
-	public String getRank() {
-		return this.rank;
-	}
+    public String getRank() {
+        return rank;
+    }
 
-	public void setRank(String rank) {
-		this.rank = rank;
-	}
+    public String getSuit() {
+        return suit;
+    }
 
-	public String getSuit() {
-		return this.suit;
-	}
-
-	public void setSuit(String suit) {
-		this.suit = suit;
-	}
-
-	/**
-	 * Students should implement this method for their specific children classes
-	 * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-	 */
-	@Override
-	public abstract String toString();
-
+    @Override
+    public String toString() {
+        return rank + " of " + suit;
+    }
 }

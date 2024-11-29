@@ -7,40 +7,37 @@ import java.util.*;
  * once. The group of cards has a maximum size attribute which is flexible for reuse.
  * 
  * @author dev and shweta
- * @author dev and Shweta 10-10-2024
+ * @author dev and Shweta 28-11-2024
  */
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class GroupOfCards {
+    private int size;
+    private ArrayList<Card> cards;
 
-	private int size;
-	/**
-	 * The group of cards, stored in an ArrayList
-	 */
-	private Collection<Card> cards;
+    public GroupOfCards(int size) {
+        this.size = size;
+        this.cards = new ArrayList<>();
+        initializeDeck();
+    }
 
-	public int getSize() {
-		return this.size;
-	}
+    private void initializeDeck() {
+        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
 
-	public void setSize(int size) {
-		this.size = size;
-	}
+        for (String suit : suits) {
+            for (String rank : ranks) {
+                cards.add(new Card(rank, suit));
+            }
+        }
+    }
 
-	public Collection<Card> getCards() {
-		return this.cards;
-	}
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
 
-	/**
-	 * the size of the grouping
-	 * @param size
-	 */
-	public GroupOfCards(int size) {
-		// TODO - implement GroupOfCards.GroupOfCards
-		throw new UnsupportedOperationException();
-	}
-
-	public void shuffle() {
-		// TODO - implement GroupOfCards.shuffle
-		throw new UnsupportedOperationException();
-	}
-
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
 }

@@ -7,45 +7,22 @@ import java.util.*;
  * given.
  * 
  * @author dev and shweta
- * @author dev and Shweta 10-10-2024
+ * @author dev and Shweta 28-11-2024
  */
 public abstract class Game {
+    private String name;
+    private ArrayList<Player> players;
 
-	private final String name;
-	/**
-	 * the title of the game
-	 */
-	private Collection<Player> players;
+    public Game(String name) {
+        this.name = name;
+        this.players = new ArrayList<>();
+    }
 
-	public String getName() {
-		return this.name;
-	}
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
 
-	public Collection<Player> getPlayers() {
-		return this.players;
-	}
+    public abstract void play();
 
-	public void setPlayers(Collection<Player> players) {
-		this.players = players;
-	}
-
-	/**
-	 * the players of the game
-	 * @param name
-	 */
-	public Game(String name) {
-		// TODO - implement Game.Game
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * Play the game. This might be one method or many method calls depending on your game.
-	 */
-	public abstract void play();
-
-	/**
-	 * When the game is over, use this method to declare and display a winning player.
-	 */
-	public abstract void declareWinner();
-
+    public abstract void declareWinner();
 }
